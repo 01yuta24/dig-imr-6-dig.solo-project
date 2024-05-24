@@ -4,6 +4,7 @@ const createServer = (db) => {
     /***Express 設定***/
     const express = require('express');
     const app = express();
+    const cors = require('cors');
 
     /***ミドルウェア依存関係***/
     // const morgan = require('morgan'); //ロギング用ミドルウェア
@@ -11,6 +12,7 @@ const createServer = (db) => {
     /***その他の依存関係***/
     const apiRouter = require('./router/api/index.js')(db);
 
+    app.use(cors());
     /***サーバにミドルウェアを追加。/api/のパスにマウントする ***/
     app.use('/api', [
         express.json(), // これでapplication/jsonリクエストボディのパースができるようになる。
