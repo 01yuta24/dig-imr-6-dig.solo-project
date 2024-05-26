@@ -1,7 +1,8 @@
+import '../styles/Header.css';
 export const Header = () => {
     return (
-        <header>
-            <h1>Header</h1>
+        <header className="darumadrop-one-regular">
+            <h1>お買い物アプリ</h1>
         </header>
     );
 };

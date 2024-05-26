@@ -9,8 +9,8 @@ import IconButton from '@mui/material/IconButton';
 import CommentIcon from '@mui/icons-material/Comment';
 import Typography from '@mui/material/Typography';
 
-export const SubMain = ({ data }) => {
-    const [checked, setChecked] = React.useState([0]);
+export const CheckList = ({ data }) => {
+    const [checked, setChecked] = React.useState([]);
     const itemNameList = data.map((obj) => obj.name);
 
     const handleToggle = (index) => () => {

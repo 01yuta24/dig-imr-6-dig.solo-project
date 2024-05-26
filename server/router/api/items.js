@@ -10,7 +10,8 @@ module.exports = (db) => {
 
     router.post('/', async (req, res) => {
         const value = req.body;
-        const item = await db().items.post(value);
+        console.log('postを受け取りました。', value);
+        // const item = await db().items.post(value);
         res.send('postが完了しました');
     });
 
