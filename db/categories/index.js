@@ -5,5 +5,8 @@ module.exports = (knex) => {
                 .select()
                 .catch((error) => [console.log(error)]);
         },
+        delete: () => {
+            return knex('categories').del();
+        },
     };
 };

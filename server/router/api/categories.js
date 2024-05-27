@@ -8,5 +8,11 @@ module.exports = (db) => {
         res.send(category);
     });
 
+    router.delete('/', async (req, res) => {
+        console.log('deleteを受け取りました');
+        await db().categories.delete();
+        res.send('deleteしました');
+    });
+
     return router;
 };

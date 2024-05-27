@@ -51,15 +51,6 @@ export const AddList = ({
                         setItemValue(e.target.value);
                     }}
                 />
-                {/* <TextField
-                    id="item-category"
-                    label="カテゴリー"
-                    variant="standard"
-                    value={categoryValue}
-                    onChange={(e) => {
-                        setCategoryValue(e.target.value);
-                    }}
-                /> */}
                 <CategoryForm
                     categoryData={categoryData}
                     categoryValueStatus={categoryValueStatus}
