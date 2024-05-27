@@ -3,7 +3,7 @@ import '../styles/Main.css';
 import { Box } from '@mui/material';
 
 export const Main = ({ data }) => {
-    const categorySort = data.sort(
+    data.sort(
         (objA, objB) => Number(objA.category_id) - Number(objB.category_id)
     );
     const categoryList = [...new Set(data.map((obj) => obj.category_name))];

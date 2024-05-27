@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, from 'react';
 import {
     Dialog,
     DialogActions,
@@ -7,10 +7,6 @@ import {
     Slide,
     Button,
     TextField,
-    FormControl,
-    InputLabel,
-    Select,
-    MenuItem,
 } from '@mui/material';
 import CategoryForm from './CategoryForm';
 

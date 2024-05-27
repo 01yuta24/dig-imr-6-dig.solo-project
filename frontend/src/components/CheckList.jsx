@@ -11,7 +11,6 @@ import {
     Box,
 } from '@mui/material';
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
-import CommentIcon from '@mui/icons-material/Comment';
 
 export const CheckList = ({ data }) => {
     const [checked, setChecked] = React.useState([]);
