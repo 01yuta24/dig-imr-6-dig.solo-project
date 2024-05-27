@@ -4,18 +4,18 @@
  */
 exports.seed = async function (knex) {
     // Deletes ALL existing entries
-    await knex('categories').del();
+    // await knex('categories').del();
     await knex('categories').insert([
-        { name: '野菜・果物' },
-        { name: '鮮魚' },
-        { name: '精肉' },
-        { name: '惣菜' },
-        { name: '麺・納豆・豆腐' },
-        { name: '乳製品' },
-        { name: '飲料' },
-        { name: '保存食・菓子・米' },
-        { name: '冷凍物' },
-        { name: '調味料' },
-        { name: '日用品' },
+        { id: 1, name: '野菜・果物' },
+        { id: 2, name: '鮮魚' },
+        { id: 3, name: '精肉' },
+        { id: 4, name: '惣菜' },
+        { id: 5, name: '麺・納豆・豆腐' },
+        { id: 6, name: '乳製品' },
+        { id: 7, name: '飲料' },
+        { id: 8, name: '保存食・菓子・米' },
+        { id: 9, name: '冷凍物' },
+        { id: 10, name: '調味料' },
+        { id: 11, name: '日用品' },
     ]);
 };
