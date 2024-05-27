@@ -19,6 +19,10 @@ function App() {
             .get('/api/items')
             .then((res) => res.data)
             .then((data) => setData(data));
+        axios
+            .get('/api/categories')
+            .then((res) => res.data)
+            .then((data) => setCategoryData(data));
     }, []);
 
     useEffect(() => {
@@ -48,6 +52,7 @@ function App() {
                 itemValueStatus={[itemValue, setItemValue]}
                 categoryValueStatus={[categoryValue, setCategoryValue]}
                 setPostButton={setPostButton}
+                categoryData={categoryData}
             />
         </>
     );

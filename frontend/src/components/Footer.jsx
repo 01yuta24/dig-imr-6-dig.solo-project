@@ -28,6 +28,7 @@ export const Footer = ({
     setPostButton,
     itemValueStatus,
     categoryValueStatus,
+    categoryData,
 }) => {
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
@@ -67,6 +68,7 @@ export const Footer = ({
                 setPostButton={setPostButton}
                 itemValueStatus={itemValueStatus}
                 categoryValueStatus={categoryValueStatus}
+                categoryData={categoryData}
             />
         </React.Fragment>
     );

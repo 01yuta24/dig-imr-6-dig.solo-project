@@ -7,7 +7,12 @@ import {
     Slide,
     Button,
     TextField,
+    FormControl,
+    InputLabel,
+    Select,
+    MenuItem,
 } from '@mui/material';
+import CategoryForm from './CategoryForm';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -18,10 +23,10 @@ export const AddList = ({
     setPostButton,
     itemValueStatus,
     categoryValueStatus,
+    categoryData,
 }) => {
     const [open, setOpen] = openStatus;
     const [itemValue, setItemValue] = itemValueStatus;
-    const [categoryValue, setCategoryValue] = categoryValueStatus;
     const handleClose = () => {
         setPostButton((e) => e + 1);
         setOpen(false);
@@ -35,7 +40,7 @@ export const AddList = ({
             aria-describedby="alert-dialog-slide-description"
         >
             <DialogTitle>{'リストに追加したい項目'}</DialogTitle>
-            <DialogContent>
+            <DialogContent sx={{ display: 'flex' }}>
                 <TextField
                     id="item-name"
                     label="品物名"
@@ -46,7 +51,7 @@ export const AddList = ({
                         setItemValue(e.target.value);
                     }}
                 />
-                <TextField
+                {/* <TextField
                     id="item-category"
                     label="カテゴリー"
                     variant="standard"
@@ -54,21 +59,11 @@ export const AddList = ({
                     onChange={(e) => {
                         setCategoryValue(e.target.value);
                     }}
+                /> */}
+                <CategoryForm
+                    categoryData={categoryData}
+                    categoryValueStatus={categoryValueStatus}
                 />
-                {/* <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={age}
-                        label="Age"
-                        onChange={handleChange}
-                    >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
-                </FormControl>*/}
             </DialogContent>
             <DialogActions>
                 <Button onClick={handleClose}>追加</Button>
