@@ -1,13 +1,15 @@
 import * as React from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
+import {
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    Checkbox,
+    IconButton,
+    Typography,
+} from '@mui/material';
 import CommentIcon from '@mui/icons-material/Comment';
-import Typography from '@mui/material/Typography';
 
 export const CheckList = ({ data }) => {
     const [checked, setChecked] = React.useState([]);
