@@ -27,9 +27,6 @@ const createServer = (db) => {
     // }
 
     /** test */
-    app.get('/', (req, res) => {
-        console.log('hello world');
-    });
 
     return app;
 };
