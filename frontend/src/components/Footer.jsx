@@ -40,7 +40,7 @@ export const Footer = ({
             <AppBar
                 position="fixed"
                 color="success"
-                sx={{ top: 'auto', bottom: 0 }}
+                sx={{ top: 'auto', bottom: 0, height: '10vh' }}
             >
                 <Toolbar>
                     <Backdrop open={open} />
