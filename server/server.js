@@ -11,7 +11,7 @@ const createServer = (db) => {
 
     /***その他の依存関係***/
     const apiRouter = require('./router/api/index.js')(db);
-    app.use('/', express.static(path.resolve(__dirname, '../frontend/dist')));
+    // app.use('/', express.static(path.resolve(__dirname, '../frontend/dist')));
 
     app.use(cors());
     /***サーバにミドルウェアを追加。/api/のパスにマウントする ***/
@@ -27,9 +27,9 @@ const createServer = (db) => {
     // }
 
     /** test */
-    // app.get('/', (req, res) => {
-    //     console.log('hello world');
-    // });
+    app.get('/', (req, res) => {
+        res.send('<h1>これ読み込めるかな？</h1>');
+    });
 
     return app;
 };
