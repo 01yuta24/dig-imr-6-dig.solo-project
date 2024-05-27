@@ -25,14 +25,18 @@ function App() {
         if (isFirstRender.current) {
             isFirstRender.current = false;
         } else {
-            console.log({ name: itemValue, category_id: categoryValue });
+            // console.log({ name: itemValue, category_id: categoryValue });
             axios
                 .post('/api/items', {
                     name: itemValue,
                     category_id: categoryValue,
                 })
                 .then((res) => res.data)
-                .then((data) => setData(data));
+                .then((data) => {
+                    setData(data);
+                    setItemValue('');
+                    setCategoryValue('');
+                });
             console.log('送信しました');
         }
     }, [postButton]);
