@@ -10,7 +10,8 @@
         "makeSeed": "knex seed:make",
         "migrate": "knex migrate:latest",
         "seed": "knex seed:run",
-        "start": "node server/index.js"
+        "start": "node server/index.js",
+        "build": "npm run install && npm run migrate"
     },
     "keywords": [],
     "author": "",
