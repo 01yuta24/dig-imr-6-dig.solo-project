@@ -11,13 +11,16 @@ module.exports = (db) => {
     router.post('/', async (req, res) => {
         const value = req.body;
         console.log('postを受け取りました。', value);
-        // const item = await db().items.post(value);
-        res.send('postが完了しました');
+        await db().items.post(value);
+        const item = await db().items.get();
+        res.send(item);
     });
 
     router.delete('/', async (req, res) => {
+        console.log('deleteを受け取りました');
         await db().items.delete();
-        res.send('deleteが完了しました');
+        const item = await db().items.get();
+        res.send(item);
     });
 
     return router;

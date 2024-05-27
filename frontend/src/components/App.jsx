@@ -25,20 +25,19 @@ function App() {
             isFirstRender.current = false;
         } else {
             console.log({ name: itemValue, category_id: categoryValue });
-            axios.post('/api/items', {
-                name: itemValue,
-                category_id: categoryValue,
-            });
-            console.log('送信しました');
             axios
-                .get('/api/items')
+                .post('/api/items', {
+                    name: itemValue,
+                    category_id: categoryValue,
+                })
                 .then((res) => res.data)
                 .then((data) => setData(data));
+            console.log('送信しました');
         }
     }, [postButton]);
     return (
         <>
-            <Header />
+            <Header setData={setData} />
             <Main data={data} />
             <Footer
                 itemValueStatus={[itemValue, setItemValue]}
