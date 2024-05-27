@@ -1,7 +1,7 @@
 /** サーバーappの機能を決める場所 */
-
 const createServer = (db) => {
     /***Express 設定***/
+    const path = require('path');
     const express = require('express');
     const app = express();
     const cors = require('cors');
@@ -11,6 +11,7 @@ const createServer = (db) => {
 
     /***その他の依存関係***/
     const apiRouter = require('./router/api/index.js')(db);
+    app.use('/', express.static(path.resolve(__dirname, '../frontend/dist')));
 
     app.use(cors());
     /***サーバにミドルウェアを追加。/api/のパスにマウントする ***/
@@ -27,7 +28,7 @@ const createServer = (db) => {
 
     /** test */
     app.get('/', (req, res) => {
-        res.send('hello world');
+        console.log('hello world');
     });
 
     return app;
