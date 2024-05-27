@@ -1,7 +1,9 @@
 module.exports = (knex) => {
-    return () => {
-        return knex('categories')
-            .select()
-            .catch((error) => [console.log(error)]);
+    return {
+        get: () => {
+            return knex('categories')
+                .select()
+                .catch((error) => [console.log(error)]);
+        },
     };
 };

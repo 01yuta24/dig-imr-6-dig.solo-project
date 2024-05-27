@@ -1,8 +1,10 @@
 const router = require('express').Router();
-const quotesRouter = require('./items.js');
+const itemsRouter = require('./items.js');
+const categoriesRouter = require('./categories.js');
 
 module.exports = (db) => {
-    router.use('/items', quotesRouter(db));
+    router.use('/items', itemsRouter(db));
+    router.use('/categories', categoriesRouter(db));
 
     return router;
 };

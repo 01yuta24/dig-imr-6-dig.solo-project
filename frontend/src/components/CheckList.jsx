@@ -11,7 +11,10 @@ import Typography from '@mui/material/Typography';
 
 export const CheckList = ({ data }) => {
     const [checked, setChecked] = React.useState([]);
-    const itemNameList = data.map((obj) => obj.name);
+    const itemNameList = data.map((obj, i, arr) => {
+        console.log(obj);
+        return obj.item_name;
+    });
 
     const handleToggle = (index) => () => {
         const currentIndex = checked.indexOf(index);

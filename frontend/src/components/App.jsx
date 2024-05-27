@@ -9,6 +9,7 @@ function App() {
     const [itemValue, setItemValue] = useState('');
     const [categoryValue, setCategoryValue] = useState('');
     const [data, setData] = useState([]);
+    const [categoryData, setCategoryData] = useState([]);
     const [postButton, setPostButton] = useState(0);
     const isFirstRender = useRef(false);
 
